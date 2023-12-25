@@ -8,8 +8,11 @@ class Player:
 
     def set_name(self, playername=None) -> None:
         if playername is None:
-            string_name = input("Dear Player, Please enter your name: ")
-            self.name = string_name.capitalize()
+            while True:
+                string_name = input("Dear Player, Please enter your name: ")
+                if string_name != "":
+                    self.name = string_name.capitalize()
+                    break
         else:
             self.name = playername
 
